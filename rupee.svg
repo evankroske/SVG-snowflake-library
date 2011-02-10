@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    onload="startup(evt)">
+<title>Scalable rendering of the well-loved monetary unit</title>
+<script type="text/ecmascript" xlink:href="geometry.js" />
+<script type="text/ecmascript">
+<![CDATA[
+function startup(evt) {
+
+    var svgDocument = evt.target.ownerDocument;
+    
+    var points = [createPoint(0, 0), createPoint(50, 0), createPoint(100, 50), createPoint(100, 100), createPoint(50, 100), createPoint(0, 50)];
+    
+    var rupeeSVG = createPolygon(points).toSVG(svgDocument, false);
+    rupeeSVG.setAttributeNS(null, 'fill', '#00ff00');
+    rupeeSVG.setAttributeNS(null, 'stroke', '#00dd00');
+    rupeeSVG.setAttributeNS(null, 'stroke-width', 5);
+    rupeeSVG.setAttributeNS(null, 'transform', 'translate(50, 50) rotate(45, 50, 50)');
+    
+    svgDocument.documentElement.appendChild(rupeeSVG);
+}
+//]]>
+</script>
+</svg>
